@@ -6,13 +6,7 @@
 - Vagrant
 - Utilitário _pwgen_ 
 
-**Links**
-
-- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [Vagrant](https://www.vagrantup.com/)
-- [PWgen](https://pwgen.io/pt/)
-
-**Instalação**
+**Instalação das Dependências**
 
 - Virtuabox: Basta ir na loja, ou [baixar](https://www.virtualbox.org/wiki/Downloads) o pacote no site oficial e efetuar a instalação
 
@@ -34,7 +28,7 @@ git clone https://github.com/pedroieremis/Vagrant-Docker-Graylog.git
 cd Vagrant-Docker-Graylog.git
 ```
 
-**Modifique os arquivos ``.env`` com os comandos abaixo, que também estão indicados lá no arquivo. Atualize o arquivo com o resultado das saídas, da maneira que está indicada lá**
+**Modifique o arquivo ``.env`` com os resultados dos comandos abaixo, que também estão indicados lá no arquivo.**
 
 ```shell
 pwgen -N 1 -s 96
@@ -44,7 +38,7 @@ pwgen -N 1 -s 96
 echo -n SUASENHA | shasum -a 256
 ```
 
-**Se for necessário, modifique as instruções no ``Vagrantfile``, como o nome da placa de rede, a rede interna e os recursos da Vagrant. Para efetuar as modificações, caso tenha o VsCode instalado, utilize o comando abaixo para abrir no seu diretório atual nele**
+**Se for necessário, modifique as instruções no ``Vagrantfile``, como o nome da placa de rede, a rede interna e os recursos da Vagrant. Para agilidade em efetuar as modificações, caso tenha o VsCode instalado, utilize o comando abaixo para abrir no seu diretório atual nele**
 
 ```shell
 code .
@@ -60,12 +54,12 @@ vagrant up
 vagrant ssh
 ```
 
-**Execute o arquivo "docker-compose.yml", visualizando os Logs**
+**Execute o comando abaixo no diretório em que está o arquivo "docker-compose.yml". Dessa forma está visualizando os Logs por padrão com o tty travado**
 ```shell
 docker compose up
 ```
 
-**OU, execute o arquivo "docker-compose.yml" em Background**
+**OU, execute o comando abaixo para realizar em Background**
 ```shell
 docker compose up -d
 ```
