@@ -25,7 +25,7 @@ git clone https://github.com/pedroieremis/Vagrant-Docker-Graylog.git
 
 **Navegue até o diretório do projeto clonado**
 ```shell
-cd Vagrant-Docker-Graylog.git
+cd Vagrant-Docker-Graylog
 ```
 
 **Modifique o arquivo ``.env`` com os resultados dos comandos abaixo, que também estão indicados lá no arquivo.**
@@ -34,11 +34,17 @@ cd Vagrant-Docker-Graylog.git
 pwgen -N 1 -s 96
 ```
 
+O resultado deste acima, você coloca na variável "GRAYLOG_PASSWORD_SECRET", que está localizada no arquivo ".env".
+
 ```shell
-echo -n SUASENHA | shasum -a 256
+echo -n <SUASENHA> | shasum -a 256
 ```
 
-**Se for necessário, modifique as instruções no ``Vagrantfile``, como o nome da placa de rede, a rede interna e os recursos da Vagrant. Para agilidade em efetuar as modificações, caso tenha o VsCode instalado, utilize o comando abaixo para abrir no seu diretório atual nele**
+Já o resultado desse comnando acima, você coloca como conteúdo da variável "GRAYLOG_ROOT_PASSWORD_SHA2", também localizada no arquivo indicado anteriormente.
+
+---
+
+**Se for necessário, modifique as instruções no ``Vagrantfile``, como o nome da placa de rede, a rede interna e os recursos da Vagrant. Para agilidade em efetuar as modificações, caso tenha o VsCode instalado, utilize o comando abaixo para abrir o seu diretório atual nele**
 
 ```shell
 code .
